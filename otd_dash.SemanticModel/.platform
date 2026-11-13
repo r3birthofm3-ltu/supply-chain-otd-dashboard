@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "otd_dash"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4f5cf946-7b49-46f9-91b2-3770685f13c1"
+  }
+}

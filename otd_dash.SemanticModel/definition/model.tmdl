@@ -1,0 +1,17 @@
+model Model
+	culture: en-AU
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-AU
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Fact_Orders","Dim_Customer","Dim_Product","Dim_Geography","Dim_ShippingMode"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref cultureInfo en-AU
+
