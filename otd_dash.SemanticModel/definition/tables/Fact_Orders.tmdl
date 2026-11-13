@@ -1,0 +1,479 @@
+table Fact_Orders
+	lineageTag: e09825d2-9da7-46ad-b71b-a4961820d860
+
+	column Type
+		dataType: string
+		lineageTag: 49502fb6-208d-4aeb-b334-fd8ca183882c
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days for shipping (real)'
+		dataType: int64
+		formatString: 0
+		lineageTag: b95f96a8-75f4-4526-8b17-859e7cc255f4
+		summarizeBy: sum
+		sourceColumn: Days for shipping (real)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days for shipment (scheduled)'
+		dataType: int64
+		formatString: 0
+		lineageTag: cc9c0c98-d690-44b4-9043-152910b0d7db
+		summarizeBy: sum
+		sourceColumn: Days for shipment (scheduled)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Benefit per order'
+		dataType: string
+		lineageTag: 263adbae-f8bf-443d-91ad-81c0c6792fef
+		summarizeBy: none
+		sourceColumn: Benefit per order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales per customer'
+		dataType: string
+		lineageTag: 94e2fdd4-169a-4bc6-adb0-515090f862a0
+		summarizeBy: none
+		sourceColumn: Sales per customer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Status'
+		dataType: string
+		lineageTag: f5a4b740-009d-4d35-b984-082e8230bde7
+		summarizeBy: none
+		sourceColumn: Delivery Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Late_delivery_risk
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f6b1ce6-7e19-44bc-97f7-190650c0e55b
+		summarizeBy: sum
+		sourceColumn: Late_delivery_risk
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Id'
+		dataType: string
+		lineageTag: 7a3d7f6c-a5ab-4ee1-b321-05726a248beb
+		summarizeBy: none
+		sourceColumn: Category Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Name'
+		dataType: string
+		lineageTag: 1428d9ef-77b4-4c85-9617-2ed60b7744a5
+		summarizeBy: none
+		sourceColumn: Category Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer City'
+		dataType: string
+		lineageTag: aa02be23-410e-408d-93ce-be6ede84e178
+		summarizeBy: none
+		sourceColumn: Customer City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country'
+		dataType: string
+		lineageTag: c60c2aa7-0980-45a1-ba20-9e738d378e09
+		summarizeBy: none
+		sourceColumn: Customer Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Fname'
+		dataType: string
+		lineageTag: e82c1fda-dd9a-4ce0-a813-e6094ea19aa5
+		summarizeBy: none
+		sourceColumn: Customer Fname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Id'
+		dataType: string
+		lineageTag: d69c40f5-11e8-4006-bfde-70392c7a311d
+		summarizeBy: none
+		sourceColumn: Customer Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Lname'
+		dataType: string
+		lineageTag: 38225875-877f-42fc-8746-242c4421ec47
+		summarizeBy: none
+		sourceColumn: Customer Lname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 15da54d7-cf25-41ed-8af8-88271a02766a
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer State'
+		dataType: string
+		lineageTag: 557d363b-8a1c-4014-91d0-1dba7c0be1f1
+		summarizeBy: none
+		sourceColumn: Customer State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Zipcode'
+		dataType: string
+		lineageTag: e4f7b8cb-dad7-4164-99d2-2e21f29bbebb
+		summarizeBy: none
+		sourceColumn: Customer Zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Id'
+		dataType: string
+		lineageTag: 4b9775e2-cfc7-4032-8563-c515c5490561
+		summarizeBy: none
+		sourceColumn: Department Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Department Name'
+		dataType: string
+		lineageTag: 7f97732d-90d6-4411-b4c7-7279bd73b6e0
+		summarizeBy: none
+		sourceColumn: Department Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: string
+		lineageTag: 3ba16023-214b-4832-a987-115b396c9f09
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: string
+		lineageTag: 9b2b322b-a5a6-4bec-a3e0-641ff0a55449
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Market
+		dataType: string
+		lineageTag: 720c3eb7-92b2-497f-ac2e-c86401eada20
+		summarizeBy: none
+		sourceColumn: Market
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order City'
+		dataType: string
+		lineageTag: 48c38eb6-2ad8-4989-9166-e18ca3986d6d
+		summarizeBy: none
+		sourceColumn: Order City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Country'
+		dataType: string
+		lineageTag: b9186a21-5940-4dd0-a6c9-50ca8316c6d8
+		summarizeBy: none
+		sourceColumn: Order Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Customer Id'
+		dataType: string
+		lineageTag: ed398e05-6c70-4807-b0a4-a1bce675e876
+		summarizeBy: none
+		sourceColumn: Order Customer Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'order date (DateOrders)'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: af438407-8817-4626-8fb7-1f6afb5fda29
+		summarizeBy: none
+		sourceColumn: order date (DateOrders)
+
+		variation Variation
+			isDefault
+			relationship: 2926a0b5-a1de-4afc-a5bb-909fe6aec53b
+			defaultHierarchy: LocalDateTable_fbde0d2e-b6a0-4caf-a871-fe0189c4a681.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Id'
+		dataType: string
+		lineageTag: 030fb9f4-4c7e-4e14-ac74-19706afd0a74
+		summarizeBy: none
+		sourceColumn: Order Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Cardprod Id'
+		dataType: string
+		lineageTag: 2aed9a57-50c8-4ec9-b029-3dcfa8d79987
+		summarizeBy: none
+		sourceColumn: Order Item Cardprod Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Discount'
+		dataType: string
+		lineageTag: c2a4f8bf-1241-4859-8957-cfcf2f0cc4af
+		summarizeBy: none
+		sourceColumn: Order Item Discount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Discount Rate'
+		dataType: string
+		lineageTag: 2fa25265-c41c-4186-8f76-15b9ff192fbc
+		summarizeBy: none
+		sourceColumn: Order Item Discount Rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Id'
+		dataType: string
+		lineageTag: 59e233c0-a322-4c78-8310-743150fcef8a
+		summarizeBy: none
+		sourceColumn: Order Item Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Product Price'
+		dataType: string
+		lineageTag: e27ced8c-c49c-4e98-b0d3-23fb95dbdc48
+		summarizeBy: none
+		sourceColumn: Order Item Product Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Profit Ratio'
+		dataType: string
+		lineageTag: 933f9fda-1a99-4e9d-af8b-413c859c0e5e
+		summarizeBy: none
+		sourceColumn: Order Item Profit Ratio
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Item Quantity'
+		dataType: string
+		lineageTag: aa65c409-a64b-4b4b-88ce-89eb31ccc2fd
+		summarizeBy: none
+		sourceColumn: Order Item Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		lineageTag: 9a747f64-c8b9-4530-b31d-316a671ab970
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Item Total'
+		dataType: string
+		lineageTag: 6a69337e-abca-4580-83ce-8c33567ccee3
+		summarizeBy: none
+		sourceColumn: Order Item Total
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Profit Per Order'
+		dataType: double
+		lineageTag: 63058ad2-62b3-4b04-ba85-a3723c639a09
+		summarizeBy: sum
+		sourceColumn: Order Profit Per Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Region'
+		dataType: string
+		lineageTag: a15e6fe3-e03b-45d3-bd2b-8866b8d06554
+		summarizeBy: none
+		sourceColumn: Order Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order State'
+		dataType: string
+		lineageTag: 2d3e8008-8d56-4c34-86ed-0c4f9ffa641f
+		summarizeBy: none
+		sourceColumn: Order State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Status'
+		dataType: string
+		lineageTag: aa539c51-a459-4a6a-a6c5-05590e2b8cc1
+		summarizeBy: none
+		sourceColumn: Order Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Zipcode'
+		dataType: string
+		lineageTag: 39d1af81-700e-4a28-a153-5d7b2eb111d5
+		summarizeBy: none
+		sourceColumn: Order Zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Card Id'
+		dataType: string
+		lineageTag: c6b69e1b-7068-4ef4-b62b-9366ee2cf766
+		summarizeBy: none
+		sourceColumn: Product Card Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category Id'
+		dataType: string
+		lineageTag: 37fd3428-1f04-45a7-9612-54326efbcdc3
+		summarizeBy: none
+		sourceColumn: Product Category Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: e06c56f0-a5a0-4b31-8a4f-d540523411cb
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Price'
+		dataType: string
+		lineageTag: 9b847f13-d026-49ed-bd37-78547c152d0f
+		summarizeBy: none
+		sourceColumn: Product Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Status'
+		dataType: string
+		lineageTag: ca7c84bf-4fd3-4b8f-a054-40a665650b51
+		summarizeBy: none
+		sourceColumn: Product Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'shipping date (DateOrders)'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: be407ad1-7099-4b5c-86f4-8e256afef364
+		summarizeBy: none
+		sourceColumn: shipping date (DateOrders)
+
+		variation Variation
+			isDefault
+			relationship: 7b2ab6e5-53d5-4bab-b3f9-d32bd5c6db62
+			defaultHierarchy: LocalDateTable_cd4ebbdf-0e31-4b04-a508-7bc0bc50fff1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipping Mode'
+		dataType: string
+		lineageTag: e2b0b352-1804-48bf-9593-f5b8f1201517
+		summarizeBy: none
+		sourceColumn: Shipping Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6a7b4b60-c35f-4566-967a-157ad6154f11
+		summarizeBy: none
+		sourceColumn: Order Date
+
+		variation Variation
+			isDefault
+			relationship: ce45bd6f-468b-4151-b72a-c51e2dfcd3bc
+			defaultHierarchy: LocalDateTable_edff64be-42e6-461c-ab54-837c8a9d7e26.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Delay Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bf15850-e95e-4b7c-aac7-adb1d3a8f304
+		summarizeBy: sum
+		sourceColumn: Delay Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OTD Flag'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a3d4e18-dfb0-4306-aa13-e00a4a63fba9
+		summarizeBy: sum
+		sourceColumn: OTD Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Canceled'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0bab632f-023e-4559-a9f8-28a614b6d949
+		summarizeBy: none
+		sourceColumn: Is Canceled
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Orders = m
+		mode: import
+		source =
+				let
+				    DataPath = "D:\Projects_o26\PoweBI_dash\data\raw\DataCoSupplyChainDataset.csv",
+				    Source = Csv.Document(File.Contents(DataPath),
+				        [Delimiter=",", Encoding=1252, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {
+				        {"order date (DateOrders)", type datetime},
+				        {"shipping date (DateOrders)", type datetime},
+				        {"Days for shipping (real)", Int64.Type},
+				        {"Days for shipment (scheduled)", Int64.Type},
+				        {"Sales", type number},
+				        {"Order Profit Per Order", type number}
+				    }, "en-US"),
+				    Dropped = Table.RemoveColumns(Typed, {"Customer Email", "Customer Password",
+				        "Customer Street", "Product Description", "Product Image"}, MissingField.Ignore),
+				    OrderDate = Table.AddColumn(Dropped, "Order Date", each DateTime.Date([#"order date (DateOrders)"]), type date),
+				    Delay = Table.AddColumn(OrderDate, "Delay Days",
+				        each [#"Days for shipping (real)"] - [#"Days for shipment (scheduled)"], Int64.Type),
+				    OTD = Table.AddColumn(Delay, "OTD Flag", each if [Delay Days] <= 0 then 1 else 0, Int64.Type),
+				    Canceled = Table.AddColumn(OTD, "Is Canceled", each [Delivery Status] = "Shipping canceled", type logical),
+				  #"Choose columns" = Table.SelectColumns(Canceled, {"Type", "Days for shipping (real)", "Days for shipment (scheduled)", "Benefit per order", "Sales per customer", "Delivery Status", "Late_delivery_risk", "Category Id", "Category Name", "Customer City", "Customer Country", "Customer Fname", "Customer Id", "Customer Lname", "Customer Segment", "Customer State", "Customer Zipcode", "Department Id", "Department Name", "Latitude", "Longitude", "Market", "Order City", "Order Country", "Order Customer Id", "order date (DateOrders)", "Order Id", "Order Item Cardprod Id", "Order Item Discount", "Order Item Discount Rate", "Order Item Id", "Order Item Product Price", "Order Item Profit Ratio", "Order Item Quantity", "Sales", "Order Item Total", "Order Profit Per Order", "Order Region", "Order State", "Order Status", "Order Zipcode", "Product Card Id", "Product Category Id", "Product Name", "Product Price", "Product Status", "shipping date (DateOrders)", "Shipping Mode", "Order Date", "Delay Days", "OTD Flag", "Is Canceled"}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Choose columns", {{"Delivery Status", type text}, {"Late_delivery_risk", Int64.Type}}, "en-US")
+				in
+				    #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

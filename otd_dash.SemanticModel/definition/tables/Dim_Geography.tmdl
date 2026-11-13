@@ -1,0 +1,76 @@
+table Dim_Geography
+	lineageTag: 6c1f063c-48bc-496e-bb47-4768159aba8e
+
+	column Latitude
+		dataType: double
+		lineageTag: 64197144-dfca-4c99-9b2f-ec03a7327718
+		summarizeBy: sum
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Longitude
+		dataType: double
+		lineageTag: 84efbd86-bd3e-48e5-b876-3920ba9ac185
+		summarizeBy: sum
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order City'
+		dataType: string
+		lineageTag: 6432c70a-17b2-421e-b50e-8c5472bbc2d4
+		summarizeBy: none
+		sourceColumn: Order City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Country'
+		dataType: string
+		lineageTag: 82136fcb-a373-49b1-8834-ee00d3a16e73
+		summarizeBy: none
+		sourceColumn: Order Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Region'
+		dataType: string
+		lineageTag: 1f7d4ba8-f398-43d9-8ff0-9374a171dc03
+		summarizeBy: none
+		sourceColumn: Order Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order State'
+		dataType: string
+		lineageTag: 982a1705-2ae0-4367-9424-e71933d01801
+		summarizeBy: none
+		sourceColumn: Order State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Zipcode'
+		dataType: int64
+		formatString: 0
+		lineageTag: c44dde41-2bef-41be-be56-55b058e8e7d4
+		summarizeBy: sum
+		sourceColumn: Order Zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Geography = m
+		mode: import
+		source =
+				let
+				  Source = Fact_Orders,
+				  #"Choose columns" = Table.SelectColumns(Source, {"Latitude", "Longitude", "Order City", "Order Country", "Order Region", "Order State", "Order Zipcode"}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Choose columns", {{"Latitude", type number}, {"Longitude", type number}, {"Order City", type text}, {"Order Country", type text}, {"Order Region", type text}, {"Order State", type text}, {"Order Zipcode", Int64.Type}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

@@ -9,9 +9,23 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Fact_Orders","Dim_Customer","Dim_Product","Dim_Geography","Dim_ShippingMode"]
+annotation PBI_QueryOrder = ["Fact_Orders","Dim_Customer","Dim_Product","Dim_Geography","Dim_ShippingMode","_Measures"]
 
 annotation PBI_ProTooling = ["DevMode"]
+
+ref table Dim_Date
+ref table Fact_Orders
+ref table DateTableTemplate_20a71bd6-c9cb-4727-9b01-6dd4b0cf9410
+ref table LocalDateTable_fbde0d2e-b6a0-4caf-a871-fe0189c4a681
+ref table LocalDateTable_cd4ebbdf-0e31-4b04-a508-7bc0bc50fff1
+ref table LocalDateTable_edff64be-42e6-461c-ab54-837c8a9d7e26
+ref table Dim_Customer
+ref table Dim_Product
+ref table Dim_Geography
+ref table Dim_ShippingMode
+ref table LocalDateTable_2a5e70fb-9f45-41d9-9af0-60382b9cbb6f
+ref table LocalDateTable_9d88fcd1-7f51-46d5-ab62-7c63a9fbaaf9
+ref table _Measures
 
 ref cultureInfo en-AU
 

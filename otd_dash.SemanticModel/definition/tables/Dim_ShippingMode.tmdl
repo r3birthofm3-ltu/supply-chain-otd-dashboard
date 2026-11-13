@@ -1,0 +1,36 @@
+table Dim_ShippingMode
+	lineageTag: f0cfa2f2-9ff9-42bb-ab98-90d0f7803791
+
+	column 'shipping date (DateOrders)'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 054c2f87-d198-44dd-8460-e9873474d363
+		summarizeBy: none
+		sourceColumn: shipping date (DateOrders)
+
+		variation Variation
+			isDefault
+			relationship: fc5f2d37-49db-4558-83ce-e7a0f8280c0e
+			defaultHierarchy: LocalDateTable_2a5e70fb-9f45-41d9-9af0-60382b9cbb6f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipping Mode'
+		dataType: string
+		lineageTag: 88252b69-6492-43c5-be48-cec15043fc3f
+		summarizeBy: none
+		sourceColumn: Shipping Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_ShippingMode = m
+		mode: import
+		source =
+				let
+				  Source = Fact_Orders,
+				  #"Choose columns" = Table.SelectColumns(Source, {"shipping date (DateOrders)", "Shipping Mode"})
+				in
+				  #"Choose columns"
+
+	annotation PBI_ResultType = Table
+

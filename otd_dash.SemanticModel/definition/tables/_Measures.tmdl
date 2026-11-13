@@ -1,0 +1,94 @@
+table _Measures
+	lineageTag: 4481a6ec-c1c7-455c-9d03-33b86388f253
+
+	measure Orders = DISTINCTCOUNT ( Fact_Orders[Order Id] )
+		formatString: 0
+		lineageTag: 14ec0d60-5fee-4523-9f11-86af4c5bc315
+
+	measure 'Delivered Orders' =
+			
+			CALCULATE ( [Orders], Fact_Orders[Is Canceled] = FALSE () )
+		formatString: 0
+		lineageTag: c3c81849-e162-43b8-bb17-42645e8851fc
+
+	measure 'On-Time Orders' =
+			
+			CALCULATE ( [Orders], Fact_Orders[Is Canceled] = FALSE (), Fact_Orders[OTD Flag] = 1 )
+		formatString: 0
+		lineageTag: 0392422d-bfd5-4de1-93be-65bb8afb1da6
+
+	measure 'Late Orders' = [Delivered Orders] - [On-Time Orders]
+		formatString: 0
+		lineageTag: 5d83d81e-38d4-444f-ba3d-1297493818c6
+
+	measure 'OTD Target' = 0.95
+		lineageTag: fd06142d-8897-4258-b6d4-b9cd81a33c40
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'OTD %' = DIVIDE ( [On-Time Orders], [Delivered Orders] )
+		lineageTag: af0a8be3-55b2-4cc4-b452-14612f551949
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'OTD vs Target (pp)' = ( [OTD %] - [OTD Target] ) * 100
+		lineageTag: 6e2f1d4b-d76e-4f51-8030-826f1857ef4a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Delay Days (Late)' =
+			
+			CALCULATE (
+			    AVERAGE ( Fact_Orders[Delay Days] ),
+			    Fact_Orders[OTD Flag] = 0,
+			    Fact_Orders[Is Canceled] = FALSE ()
+			)
+		lineageTag: 2a3abb6c-6172-4124-80e6-63bc8b3d03a2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'OTD % PY' = CALCULATE ( [OTD %], SAMEPERIODLASTYEAR ( Dim_Date[Date] ) )
+		lineageTag: 6ee9df8e-2dc7-43ee-987f-8bb603a8c19b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'OTD YoY (pp)' = ( [OTD %] - [OTD % PY] ) * 100
+		lineageTag: 9bb8c1d9-477c-4667-9a3e-6daf666d3175
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'OTD % Rolling 3M' =
+			
+			CALCULATE ( [OTD %], DATESINPERIOD ( Dim_Date[Date], MAX ( Dim_Date[Date] ), -3, MONTH ) )
+		lineageTag: a4877c2c-9e37-4dad-ad8f-35b64a1a4e77
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue at Risk' =
+			
+			CALCULATE ( SUM ( Fact_Orders[Sales] ), Fact_Orders[OTD Flag] = 0, Fact_Orders[Is Canceled] = FALSE () )
+		lineageTag: e94a720a-96ed-4fbc-92ef-8213f1435e4d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 6642695f-05c0-4529-b8b6-149bcd4ffc78
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t])
+				in
+				  Source
+
+	annotation PBI_ResultType = Table
+

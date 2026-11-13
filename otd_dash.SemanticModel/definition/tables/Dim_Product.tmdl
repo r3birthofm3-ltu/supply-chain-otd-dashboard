@@ -1,0 +1,60 @@
+table Dim_Product
+	lineageTag: 83afc43b-1aad-4a0e-a929-20a54b46b854
+
+	column 'Product Card Id'
+		dataType: int64
+		formatString: 0
+		lineageTag: 24c71764-873c-4ad0-93f3-bc912f26a824
+		summarizeBy: count
+		sourceColumn: Product Card Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category Id'
+		dataType: int64
+		formatString: 0
+		lineageTag: b10a9cac-4cbe-436c-bcbe-11f095c59794
+		summarizeBy: count
+		sourceColumn: Product Category Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 49f52c7a-9934-4d90-911d-f68698e7d19d
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Price'
+		dataType: double
+		lineageTag: 2b179580-91aa-4c79-9fab-3e2ee23cd751
+		summarizeBy: sum
+		sourceColumn: Product Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Status'
+		dataType: int64
+		formatString: 0
+		lineageTag: c98313aa-3010-46ef-aa82-d6d15db949af
+		summarizeBy: sum
+		sourceColumn: Product Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Product = m
+		mode: import
+		source =
+				let
+				  Source = Fact_Orders,
+				  #"Choose columns" = Table.SelectColumns(Source, {"Product Card Id", "Product Category Id", "Product Name", "Product Price", "Product Status"}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Choose columns", {{"Product Card Id", Int64.Type}, {"Product Category Id", Int64.Type}, {"Product Name", type text}, {"Product Price", type number}, {"Product Status", Int64.Type}}, "en-US")
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

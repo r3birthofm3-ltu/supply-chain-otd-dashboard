@@ -1,0 +1,29 @@
+relationship 2926a0b5-a1de-4afc-a5bb-909fe6aec53b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Orders.'order date (DateOrders)'
+	toColumn: LocalDateTable_fbde0d2e-b6a0-4caf-a871-fe0189c4a681.Date
+
+relationship 7b2ab6e5-53d5-4bab-b3f9-d32bd5c6db62
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Orders.'shipping date (DateOrders)'
+	toColumn: LocalDateTable_cd4ebbdf-0e31-4b04-a508-7bc0bc50fff1.Date
+
+relationship ce45bd6f-468b-4151-b72a-c51e2dfcd3bc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Orders.'Order Date'
+	toColumn: LocalDateTable_edff64be-42e6-461c-ab54-837c8a9d7e26.Date
+
+relationship fc5f2d37-49db-4558-83ce-e7a0f8280c0e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_ShippingMode.'shipping date (DateOrders)'
+	toColumn: LocalDateTable_2a5e70fb-9f45-41d9-9af0-60382b9cbb6f.Date
+
+relationship AutoDetected_35de1f2e-9071-4d1f-8b08-4ba07ad96e0a
+	fromColumn: Fact_Orders.'Customer City'
+	toColumn: Dim_Customer.'Customer City'
+
+relationship b2a70e51-f221-4183-b4ae-7f4b7eecb1d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Date.Date
+	toColumn: LocalDateTable_9d88fcd1-7f51-46d5-ab62-7c63a9fbaaf9.Date
+

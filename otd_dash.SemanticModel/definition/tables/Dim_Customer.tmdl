@@ -1,0 +1,82 @@
+table Dim_Customer
+	lineageTag: 2c57fb22-36d5-46c1-8c8c-6be2457671d8
+
+	column 'Customer City'
+		dataType: string
+		lineageTag: 60a0a09b-983f-4912-abba-961996083d9b
+		summarizeBy: none
+		sourceColumn: Customer City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Country'
+		dataType: string
+		lineageTag: a9d23f3b-e664-40ad-a154-7b53f97deea4
+		summarizeBy: none
+		sourceColumn: Customer Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Fname'
+		dataType: string
+		lineageTag: 50c40366-ca57-4d05-8e4c-df03f37e9eab
+		summarizeBy: none
+		sourceColumn: Customer Fname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Id'
+		dataType: int64
+		formatString: 0
+		lineageTag: 885917c4-82b8-4dcf-a1c7-8f2f4730bf45
+		summarizeBy: none
+		sourceColumn: Customer Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Lname'
+		dataType: string
+		lineageTag: 894e3727-6647-4c2b-a262-beccfb6dd917
+		summarizeBy: none
+		sourceColumn: Customer Lname
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: d428c012-7855-4b1b-9cf8-deca307ad332
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer State'
+		dataType: string
+		lineageTag: 2c7e13d2-fd42-4f39-b1e9-7db7a95b5064
+		summarizeBy: none
+		sourceColumn: Customer State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Zipcode'
+		dataType: int64
+		formatString: 0
+		lineageTag: e4ff2639-139f-4eee-a852-885bf959436c
+		summarizeBy: none
+		sourceColumn: Customer Zipcode
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Customer = m
+		mode: import
+		source =
+				let
+				  Source = Fact_Orders,
+				  #"Choose columns" = Table.SelectColumns(Source, {"Customer City", "Customer Country", "Customer Fname", "Customer Id", "Customer Lname", "Customer Segment", "Customer State", "Customer Zipcode"}),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Choose columns", {{"Customer City", type text}, {"Customer Country", type text}, {"Customer Fname", type text}, {"Customer Id", Int64.Type}, {"Customer Lname", type text}, {"Customer Segment", type text}, {"Customer State", type text}, {"Customer Zipcode", Int64.Type}}, "en-US"),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"Customer City"})
+				in
+				  #"Removed duplicates"
+
+	annotation PBI_ResultType = Table
+

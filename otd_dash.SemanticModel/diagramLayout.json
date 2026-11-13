@@ -4,10 +4,101 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 521,
         "y": 0
       },
-      "nodes": [],
+      "nodes": [
+        {
+          "location": {
+            "x": 1370,
+            "y": 62
+          },
+          "nodeIndex": "Dim_Date",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334,
+            "y": -36
+          },
+          "nodeIndex": "Dim_Customer",
+          "nodeLineageTag": "2c57fb22-36d5-46c1-8c8c-6be2457671d8",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 26
+          },
+          "nodeIndex": "Dim_Geography",
+          "nodeLineageTag": "6c1f063c-48bc-496e-bb47-4768159aba8e",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 50
+          },
+          "nodeIndex": "Dim_Product",
+          "nodeLineageTag": "83afc43b-1aad-4a0e-a929-20a54b46b854",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 86
+          },
+          "nodeIndex": "Dim_ShippingMode",
+          "nodeLineageTag": "f0cfa2f2-9ff9-42bb-ab98-90d0f7803791",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": -50
+          },
+          "nodeIndex": "Fact_Orders",
+          "nodeLineageTag": "e09825d2-9da7-46ad-b71b-a4961820d860",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1604,
+            "y": 110
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "4481a6ec-c1c7-455c-9d03-33b86388f253",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
       "name": "All tables",
       "zoomValue": 100,
       "pinKeyFieldsToTop": false,
