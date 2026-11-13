@@ -1,0 +1,4 @@
+data/raw/
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
+*.pbix
